@@ -1,0 +1,985 @@
+@import vars
+@import fonts
+@import libs
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: 'FiraSans', sans-serif
+	overflow-x: hidden
+	color: $text
+
+// Custom Sass / Remove before use
+h1
+	font-size: calc(1em + 1.6vw)
+	line-height: calc(1em + 0.3vw)
+	font-weight: 700
+	font-family: "SourceSansPro"
+	color: $accent
+h2
+	font-size: em(36px)
+	line-height: em(44px)
+	font-weight: 700
+	font-family: "SourceSansPro"
+	margin-bottom: em(38px)
+h3
+	font-size: em(28px)
+	line-height: em(34px)
+	font-weight: 700
+	font-family: "SourceSansPro"
+	margin-bottom: em(30px)
+h4
+	font-size: em(24px)
+	line-height: 1.3
+	font-weight: 700
+	font-family: "SourceSansPro"
+	margin-bottom: em(24px)
+h5
+	font-size: em(16px)
+	line-height: em(20px)
+	font-weight: 600
+	font-family: "SourceSansPro"
+	margin-bottom: em(25px)
+h6
+	font-size: em(14px)
+	line-height: em(18px)
+	font-weight: 600
+	font-family: "SourceSansPro"
+	margin-bottom: em(18px)
+p 
+	font-size: em(16px)
+	line-height: em(24px)
+p + h2
+	margin-top: em(50px)
+p + h3
+	margin-top: em(40px)
+p + h4 
+	margin-top: em(36px)
+a
+	cursor: pointer
+.container
+	padding:
+		right: $gutter/2
+		left: $gutter/2
+	margin:
+		left: auto
+		right: auto
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+.example-grid
+	display: grid
+	grid-gap: $gutter
+	grid-template-columns: 1fr 1fr
+	grid-template-areas: "left right"
+	> div:first-child
+		grid-area: left
+	> div:last-child
+		grid-area: right
+	+media-breakpoint-down(xs)
+		display: block
+		> div
+			padding: $gutter/2 0
+	
+.example-img
+	width: 100%
+
+.parent // Lazy Load Placeholder Generator: https://webdesign-master.ru/services/lazy/
+	background-image: url(data:image/gif;base64,R0lGODlhCgAIAIABAN3d3f///yH5BAEAAAEALAAAAAAKAAgAAAINjAOnyJv2oJOrVXrzKQA7)
+.bg-menu
+	background-color: $light-gray
+
+.header-wrapper
+	display: flex
+	justify-content: space-between
+	.social-wrapper
+		display: flex
+		flex-wrap: wrap
+		flex-direction: row
+		align-items: center
+		width: em(140px)
+		.icon
+			margin-right: em(12px)
+.logo-wrapper
+	display: flex
+	padding-top: em(22px)
+	padding-bottom: em(22px)
+	.logo-image
+		margin-right: em(16px)
+	.site-description-wrapper
+		display: flex
+		flex-wrap: nowrap
+		justify-content: flex-start
+		align-items: center
+		width: 79%
+		.site-name
+			font-family: "FiraSans"
+			font-size: em(17px)
+			font-weight: 500
+			line-height: em(21px)
+			letter-spacing: -0.8px
+			color: $accent
+			padding-right: em(15px)
+			width: 34%
+			a
+				color: $accent
+				text-decoration: none
+			h1
+				font-family: "FiraSans"
+				font-size: em(17px)
+				font-weight: 500
+				line-height: em(21px)
+				letter-spacing: -0.8px
+				color: $accent
+				padding-right: em(15px)
+		.site-description
+			font-family: "FiraSans"
+			font-size: em(14px)
+			font-weight: 400
+			line-height: em(20px)
+			width: 42%
+.header
+	position: relative
+.uzor
+	&::before
+		position: absolute
+		content: ""
+		bottom: 0
+		left: 0
+
+		height: em(10px)
+		width: 100vw
+		background-image: url("../img/_src/uzor.svg")
+		background-size: contain
+// buttons
+.btn 
+	border-radius: 0
+	transition: all 0.4s
+	&.btn-primary 
+		background-color: $accent
+		border-color: $accent
+		padding-left: em(25px)
+		padding-right: em(25px)
+		&.darkbg
+			background-color: $blackbg
+			border-color: $blackbg
+			font-size: em(14px)
+			font-weight: 400
+			text-transform: uppercase
+			border-radius: 0
+		&:hover
+			background-color: $secondary-color
+			border-color: $secondary-color
+			transition: all 0.4s
+input.submit	
+	border-radius: 0
+	background-color: $accent
+	border-color: $accent
+	padding-left: em(25px)
+	padding-right: em(25px)	
+	padding-top: em(14px)
+	padding-bottom: em(14px)
+	transition: all 0.4s
+	color: $whitebg
+	font-size: em(16px)
+	&:hover
+		background-color: $secondary-color
+		border-color: $secondary-color
+		transition: all 0.4s
+.button-wrapper
+	display: flex
+	align-items: center
+	justify-content: flex-end
+	flex-direction: row
+	width: em(266px)
+a
+	color: $accent
+	transition: all 0.5s
+	&:hover
+		transition: all 0.5s
+// Navigation menu
+.menu-wrapper
+	background-color: #f3f6f8
+.navbar
+	padding-left: 0
+	padding-right: 0
+.navbar-nav
+	align-items: center
+	.nav-item
+		padding-top: em(6px)
+		padding-bottom: em(6px)
+		.nav-link
+			color: $blackbg
+			font-family: "SourceSansPro"
+			font-size: em(14px)
+			font-weight: 600
+			line-height: em(16px)
+			padding-left: 1.2rem
+			padding-right: 1.2rem
+			li
+				a
+					
+		&.active
+			color: $accent
+			li
+				a
+					&:hover
+						color: $accent
+.navigation-menus 
+	.nav
+		.nav-item
+			width: 100%
+			.nav-link
+				padding-top: 0
+				padding-bottom: em(25px)
+				font-size: em(16px)
+				font-weight: normal
+				line-height: em(24px)
+
+.main-bg
+	position: relative
+	&::after
+		content: ""
+		background: url(data:image/gif;base64,R0lGODlhCgAIAIABAN3d3f///yH5BAEAAAEALAAAAAAKAAgAAAINjAOnyJv2oJOrVXrzKQA7)
+		height: em(335px)
+		background-image: url("/img/@1x/bg-main.jpg")
+		background-size: cover
+		width: 100vw
+		position: absolute
+		top: 0
+		z-index: -2
+.search-wrapper
+	display: flex
+	background: $whitebg
+	padding: em(18px) em(22px) em(18px) em(22px)
+	border-radius: 0
+	margin-top: em(50px)
+	position: relative
+	z-index: 1
+	.search-icon
+		width: em(23px)
+		height: em(23px)
+		background: url("/img/@1x/Search-icon.svg")
+		margin-top: em(5px)
+		margin-right: em(15px)
+	.form-inline
+		width: 100%
+		display: flex
+		justify-content: space-between
+		.form-group
+			width: calc(100% - 110px)
+			input.form-control
+				border-radius: 0
+				width: 100%
+	&::after
+		content: ""
+		background: $white
+		height: 100%
+		position: absolute
+		width: calc(100% + 88px)
+		left: -44px
+		top: 0
+		z-index: -1
+.section-title
+	font-family: "SourceSansPro"
+	font-weight: 700
+	font-size: em(30px)
+	line-height: 1.2
+	letter-spacing: 0.3px
+	color: $blackbg
+	margin-top: em(20px)
+	padding-bottom: em(8px)
+	width: 100%
+	position: relative
+	&.dark
+		color: $white
+ul#footer-menu,ul#footer-menu-1, ul#footer-menu-2, ul#footer-menu-3
+	&.menu
+		margin-left: 0
+		padding-left: 0
+		list-style: none
+		.menu-item
+			a
+				color: $whitebg
+				font-weight: 400
+// sections
+.main-bg-fluid
+	background-image: url("../img/@1x/aginskoe-fon-main.jpg")
+	background-size: cover
+	background-repeat: no-repeat
+	width: 100%
+	height: em(175px)
+.main-content
+	.content-wrapper
+		background: $whitebg
+		position: relative
+		margin-top: em(40px)
+		margin-bottom: em(80px)
+		&::after
+			content: ""
+			position: absolute
+			background: $whitebg
+			width: 30px
+			top: 0
+			left: -30px
+			height: 500px
+		&::before
+			content: ""
+			position: absolute
+			background: $whitebg
+			width: 30px
+			top: 0
+			right: -30px
+			height: 500px
+	
+	.news-wrapper
+		display: flex
+		flex-direction: row
+		flex-wrap: wrap
+
+	.title-wrapper
+		display: flex
+		align-items: center
+		justify-content: space-between
+		.section-title
+			width: inherit
+			border-bottom: none
+.article
+	padding-top: em(20px)
+	padding-bottom: em(50px)
+	.comment-reply-title
+		margin-top: em(30px)
+	img
+		margin-bottom: em(30px)
+	.navigation 
+		display: block
+		&.post-navigation
+			display: inline-block
+			.nav-links
+				line-height: 1.2
+				a
+					color: $secondary-color
+.entry-header
+	padding-top: em(50px)
+	padding-bottom: em(50px)
+.content-wrap
+	overflow: hidden
+	display: flex	
+	.card-news
+		&.big
+			&.column
+				margin-right: em(30px)	
+				.image-news
+					max-height: em(185px)
+				&:last-child
+					margin-right: 0
+.single-title
+	padding-top: em(40px)
+	padding-bottom: em(40px)
+	position: relative
+	border-bottom: 0.5px solid $divider
+	margin-bottom: em(30px)
+
+	.label
+		margin-bottom: 8px
+		font-size: em(14px)
+		color: $text
+		opacity: 0.8
+		padding-top: em(15px)
+		line-height: 100%
+		background: $whitebg
+		&.label-wrapper
+			display: flex
+		.data
+			padding-right: em(3px)
+		.divider
+			padding-right: em(3px)
+.links
+	margin-bottom: em(54px)		
+.napravleniya
+	padding-bottom: em(54px)	
+	background: url("../img/@1x/aginskoe-bg.jpg")
+	box-sizing: border-box
+	background-size: cover
+	background-repeat: no-repeat
+// lists
+.list-group
+	&.list-style-gosuslugi
+		font-size: em(16px)
+		line-height: em(20px)
+		position: relative
+		.list-group-item
+			border-left: none
+			border-right: none
+			padding: em(20px) em(25px)
+			background: transparent
+			&:first-child
+				border-top-left-radius: 0
+				border-top-right-radius: 0
+				border-top: none
+			&:last-child
+				border-bottom-right-radius: 0
+				border-bottom-left-radius: 0
+				border-bottom: none
+			&.active
+				background: $accent
+				border-top: 1px solid $accent
+				border-bottom: 1px solid $accent
+		&::after
+			content: ""
+			position: absolute
+			left: 0
+			top: 0
+			width: 100%
+			height: 300vh
+			border-right: 1px solid $divider
+			z-index: -1
+.gos-list
+	ul.menu
+		list-style: none
+		font-size: em(16px)
+		line-height: em(20px)
+		padding-left: 0
+		margin-left: 0
+		.menu-item
+			border-left: none
+			border-right: none
+			padding: em(20px) em(25px)
+			background: transparent
+			border-bottom: 0.5px solid $divider
+			a
+				color: $accent
+				line-height: 1.2
+			&:first-child
+				border-top: 0
+			&:last-child
+				border-bottom: 0
+// titles
+.title-uslugi	
+	display: flex
+	align-items: center
+	height: em(61px)
+	position: relative
+	h3
+		margin-bottom: em(3px)
+		margin-top: 0
+		padding-left: em(25px)
+	&::after
+		content: ""
+		position: absolute
+		left: 0
+		bottom: 0
+		width: 100%
+		height: 1px
+		background: $divider
+		z-index: -1
+	&.level2
+		padding-top: em(17px)
+		padding-bottom: em(17px)
+		height: auto
+		h3
+			font-size: em(24px)
+			line-height: 1.2
+
+.article-uslugi
+	padding-left: em(25px)
+	padding-top: em(30px)	
+	padding-bottom: em(30px)	
+//cards
+.napr-wrapper
+	background-color: $light-gray
+	margin-bottom: em(30px)
+	transition: all 0.5s
+	.napr-content
+		padding-top: em(30px)
+		padding-bottom: em(37px)
+		padding-left: em(75px)
+		padding-right: em(34px)
+		a
+			.napr-title
+				h6
+					font-size: em(20px)
+					line-height: 1.45
+					margin-bottom: em(10px)
+				p
+					font-size: em(14px)
+					line-height: em(18px)
+					color: $graybg
+					font-weight: 400
+			&:hover
+				color: $white
+				text-decoration: none
+				transition: all 0.5s
+				.napr-title
+					p
+						color: $light-gray
+						transition: all 0.5s
+	&:hover
+		background-color: $accent
+		transition: all 0.5s
+.card-news
+	width: 100%
+	margin-bottom: em(35px)
+	.image-news
+		width: 100%
+		max-height: em(158px)
+		min-height: em(158px)
+		position: relative
+		padding: 0 0 40% 0
+		background: url(data:image/gif;base64,R0lGODlhCgAIAIABAN3d3f///yH5BAEAAAEALAAAAAAKAAgAAAINjAOnyJv2oJOrVXrzKQA7)
+		overflow: hidden
+		img
+			object-fit: cover
+			width: 100%
+			height: 100%
+			position: absolute
+			left: 0
+			top: 0
+	.content-news
+		padding-top: em(10px)
+		h3,h4,h5
+			margin-top: em(5px)
+			margin-bottom: em(5px)
+		a
+			color: $blackbg
+			text-decoration: none
+			cursor: pointer
+			&:hover
+				color: $accent
+				text-decoration: none
+		
+		.label
+			margin-bottom: 8px
+			font-size: em(14px)
+			color: $text
+			opacity: 0.8
+			padding-top: em(5px)
+			line-height: 100%
+			&.label-wrapper
+				display: flex
+			.data
+				padding-right: em(3px)
+			.divider
+				padding-right: em(3px)
+			
+	&.main
+		max-width: fit-content
+		.image-news
+			max-height: em(310px)
+			min-height: em(310px)
+			img
+				object-fit: cover
+				width: 100%
+				height: 100%
+		.content-news
+			h3
+				a
+					font-size: em(22px)
+					line-height: em(25px)
+					font-weight: 500
+	
+	&.big
+		margin-left: 0
+		max-width: fit-content
+		display: flex
+		margin-bottom: em(35px)
+		.image-news
+			min-width: em(255px)
+			margin-right: em(30px)
+			width: 100%
+			max-height: em(158px)
+			padding: 0 0 30% 0
+			img
+				object-fit: cover
+				width: 100%
+				height: 100%
+		.content-news
+			width: 100%
+			padding-top: 0
+			h6
+				font-weight: 600
+				font-family: "SourceSansPro"
+				font-size: em(16px)
+				line-height: em(22px)
+		&.column
+			flex-direction: column
+			max-width: em(318px)
+			.image-news
+				margin-right: 0
+				min-width: inherit
+				min-height: inherit
+				padding: 0 0 65% 0
+			.content-news
+				
+				.label
+					padding-top: em(20px)
+				h5
+					font-size: em(18px)
+					line-height: em(22px)
+					margin-top: em(10px)
+					padding-bottom: em(35px)
+	
+	&.biggest
+		width: inherit
+		display: flex
+		.image-news
+			max-height: inherit
+			height: 100%
+			min-width: em(250px)
+			min-height: em(185px)
+			max-height: em(397px)
+			max-width: em(541px)
+			padding: 0 0 48% 0
+		.content-news
+			margin-left: em(30px)
+			width: em(318px)
+			.label
+				&.label-wrapper
+					margin-bottom: 7px
+			a
+				h5
+					font-family: "SourceSansPro","FiraSans"
+					font-size: em(24)
+					line-height: em(22px)
+					font-weight: 600
+					margin-bottom: em(15px)
+					letter-spacing: 0.01em
+			p
+				font-size: em(14px)
+				line-height: 157%
+	&.anons
+		.content-news
+			.data-anonsa
+				font-size: em(17px)
+				line-height: em(22px)
+				margin-top: em(10px)
+				margin-bottom: em(10px)
+				h5
+					font-size: em(17px)
+					line-height: em(22px)
+					color: $accent
+			.mesto
+				font-family: "SourceSansPro"
+				font-size: em(14px)
+				line-height: em(22px)
+				font-weight: 600
+				margin-bottom: em(17px)
+				opacity: 0.8
+			p
+				font-size: em(14px)
+				line-height: 157%
+a
+	&.dopmenu, &.all-anons
+	font-family: "SourceSansPro"
+	font-style: normal
+	font-weight: 600
+	font-size: em(14px)
+	line-height: 126%
+	color: $blackbg
+.dopmenu
+	margin-top: em(20px)
+	padding-bottom: em(12px)
+.anons-wrap
+	display: flex
+	flex-wrap: wrap
+	flex-direction: column
+	box-sizing: border-box
+	height: 100%
+	
+
+.news-column
+	.card-news
+		margin-bottom: em(20px)
+		&:last-child
+			margin-left: 0
+		.image-news
+			
+		.content-news
+			h5
+				font-size: 1.2em
+				line-height: 126%
+	&.media-news
+		.card-news
+			margin-bottom: em(33px)
+// dividers
+.divider-line			
+	margin-top: 50px
+	margin-bottom: 50px
+	width: 100%
+	height: 1px
+	background: $divider
+	&.empty
+		background: transparent
+// widgets
+.widgets
+	margin-top: em(145px)
+	.widget
+		padding-left: em(30px)
+		padding-right: em(30px)
+		margin-bottom: em(40px)
+		.icon
+			margin-bottom: em(11px)
+		.text-widget
+			font-size: em(14px)
+			line-height: em(20px)
+			width: 80%
+			a
+				color: $blackbg
+				text-decoration: none
+				&:hover
+					text-decoration: none
+					color: $accent
+.widget-card 
+	width: 100%
+	height: em(130px)
+	background-color: $light-gray
+	border: 1px solid $light-gray
+	position: relative
+	margin-bottom: em(20px)
+	.widget-content
+		font-family: "SourceSansPro"
+		font-weight: 700
+		line-height: em(22px)
+		font-size: em(16px)
+		width: em(152px)
+		height: em(130px)
+		position: absolute
+		top: 0
+		left: 1px
+		padding-left: em(28px)
+		display: flex
+		align-items: center
+		a
+			color: $blackbg
+			&:hover
+				color:  $accent
+				text-decoration: none
+	&.big
+		width: 100%
+		height: em(310px)
+		.widget-content
+			width: em(251px)
+			background-color: $whitebg
+			height: em(135px)
+			bottom: 1px
+			left: 1px
+			top: inherit
+			padding-top: em(20px)
+			padding-bottom: em(28px)
+			padding-right: em(28px)
+			font-size: em(20px)
+			line-height: 126%
+	&.duma
+		height: 100%
+		margin-right: em(22px)
+		min-width: em(255px)
+		.widget-content
+			position: relative
+			background: $light-gray
+			padding-left: em(18px)
+			padding-right: em(18px)
+			padding-top: em(10px)
+			padding-bottom: em(18px)
+			width: 100%
+			height: em(100px)
+			align-items: flex-start
+			display: block
+			font-size: em(18px)
+			a + p
+				margin-top: em(5px)
+		.widget-content>p
+			font-size: em(14px)
+			line-height: em(16px)
+			font-weight: 400
+
+		.widget-image
+			min-height: em(253px)
+			background: url(data:image/gif;base64,R0lGODlhCgAIAIABAN3d3f///yH5BAEAAAEALAAAAAAKAAgAAAINjAOnyJv2oJOrVXrzKQA7)
+			overflow: hidden
+			height: em(253px)
+	&.auto-height
+		height: em(279px)
+.footer-cards
+	.footer-cards_bg
+		background: $light-gray
+		padding-bottom: em(54px)
+	.widget-card 
+		position: relative
+		height: inherit
+		.widget-content
+			position: relative
+			background: $white
+			padding-left: em(18px)
+			padding-right: em(18px)
+			padding-top: em(15px)
+			padding-bottom: em(18px)
+			width: 100%
+			height: em(100px)
+			align-items: flex-start
+		.widget-image
+			min-height: em(129px)
+			background: url(data:image/gif;base64,R0lGODlhCgAIAIABAN3d3f///yH5BAEAAAEALAAAAAAKAAgAAAINjAOnyJv2oJOrVXrzKQA7)
+			position: relative
+			padding: 0 0 25% 0
+			img
+				object-fit: cover
+				width: 100%
+				height: 100%
+				position: absolute
+				left: 0
+				top: 0
+// navigation
+.navigation-menus
+	.nav
+		.nav-item
+			font-family: "SourceSansPro"
+			font-size: em(16px)
+			line-height: 126%
+			font-weight: normal
+			.nav-link
+				color: $blackbg
+				padding-left: 0
+				&:hover
+					color: $accent
+.nav-pills 
+	.nav-link.active, .show>.nav-link
+		background-color: $secondary-color
+	.nav-link
+		border-radius: 0
+		font-size: em(14px)
+		font-family: "SourceSansPro"
+.widgets>.navigation-menus
+	background-color: $light-gray
+	padding: em(25px)
+	.nav
+		.nav-item
+			font-weight: 600
+//sliders
+.sliders-wrapper
+	background-color: $accent
+	padding-bottom: em(54px)
+	.slide-wrapper
+		position: relative
+		display: flex
+		align-items: center
+		color: $blackbg
+		min-height: em(290px)
+		max-width: em(1370px)
+		width: 100%
+		min-width: em(915px)
+		.slider-content
+			position: absolute
+			width: 55%
+			left: em(60px)
+			line-height: 126%
+			h3
+				margin-top: 0
+				margin-bottom: em(20px)
+			p
+				font-size: em(16px)
+				line-height: em(22px)
+		img
+			object-fit: cover
+			width: 100%
+			height: 100%
+		&:hover
+			color: $blackbg
+			text-decoration: none
+	.slick-list
+		overflow: visible
+		.slick-slide
+			overflow: visible
+			margin-right: em(30px)
+			opacity: 0.3
+			.slide-wrapper
+				
+			&.slick-current 
+				opacity: 1
+				&.slick-active
+					.slide-wrapper
+						opacity: 1
+						transition: all 0.5s
+.sliders-nav-wrapper
+	margin-top: em(56px)
+	color: $white
+	.slick-list
+		overflow: hidden
+		.slick-slide 
+			opacity: 0.3
+			cursor: pointer
+			&.slick-current 
+				&.slick-active
+					opacity: 1
+
+
+// footer
+.footer-block
+	.footer-bg
+		color: $whitebg
+		position: relative
+		padding-top: em(50px)
+		padding-bottom: em(80px)
+		&::after
+			content: ""
+			position: absolute
+			width: 100vw
+			top: 0
+			background: $accent
+			left: 0
+			height: 100%
+			z-index: -1
+		p
+			opacity: 0.8
+		h4, h5
+			margin-bottom: em(5px)
+	.navigation-menus
+		.nav
+			.nav-item
+				.nav-link
+					color: $light-gray
+					opacity: 0.8
+					font-size: em(13px)
+					padding-top: 0.22rem
+					padding-bottom: 0.22rem
+					&:hover
+						color: $whitebg
+						opacity: 1
+	.footer
+		background: $blackbg
+		padding-top: em(25px)
+		padding-bottom: em(25px)
+		.footer-wrapper
+			a
+				color: $whitebg
+				opacity: 0.8
+				font-size: em(14px)
+				font-family: "FiraSans"
+			.btn
+				color: $blackbg
+				margin-right: em(30px)
+				opacity: 1
+		
+			
+
+// media
+@import media
+			

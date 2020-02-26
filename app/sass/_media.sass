@@ -1,0 +1,187 @@
+@import "vars"
+
+
+/*==========  Desktop First  ==========*/
+
+// ≥1200px
++media-breakpoint-down(lg)
+    body
+        font-size: 15px
+    .napr-wrapper 
+        .napr-content
+            padding-left: em(34px)
+            a 
+                .napr-title 
+                    h6
+                        line-height: 1.18
+        
+// ≥992px
++media-breakpoint-down(md)
+    body
+        font-size: 14px
+    .napr-wrapper 
+        .napr-content
+            padding-left: em(34px)
+            a 
+                .napr-title 
+                    h6
+                        line-height: 1.16
+    .header-wrapper 
+        .social-wrapper
+            width: 14.75em
+        .button-wrapper
+            width: 25.6em
+        .logo-wrapper 
+            .site-description-wrapper 
+                .site-name
+                    width: 58%
+    .card-news
+        .image-news
+            min-height: inherit
+            padding: 0 0 65% 0
+        &.biggest 
+            .content-news 
+                a 
+                    h5
+                        line-height: 1.1em
+        &.anons 
+            .content-news 
+                .data-anonsa
+                    line-height: 1.15
+        &.big 
+            .image-news
+                min-width: 10.9375em
+// ≥768px
++media-breakpoint-down(sm)
+    body
+        font-size: 14px
+    .header-wrapper
+        flex-direction: row
+        flex-wrap: wrap
+        padding-bottom: 1.25rem
+        .logo-wrapper
+            flex-shrink: 0
+            padding-bottom: 0.5rem
+            width: 100vw
+            .site-description-wrapper
+                width: 100%
+                .site-name
+                    width: 50%
+                    font-size: em(16px)
+                    line-height: em(18px)
+                .site-description
+                    width: 38%
+                    font-size: em(12px)
+                    line-height: em(16px)
+        .button-wrapper
+            width: 66%
+            .btn
+                &.btn-primary
+                    &.darkbg
+                        font-size: em(14px)
+                        text-transform: unset
+        .social-wrapper
+            width: 33%
+    .main-bg-fluid
+        height: em(100px)
+    .content-wrap
+        flex-direction: column
+    .card-news
+        margin-bottom: em(18px)
+        &.big
+            &.column
+                max-width: inherit
+        &.biggest
+            max-width: inherit
+            margin-right: inherit
+            margin-left: inherit
+            flex-direction: column
+            .content-news
+                margin-left: 0
+                width: 100%
+                a
+                    h5
+                        line-height: 1.35em
+    .section-title
+        margin-top: 1em
+        margin-bottom: 0.2em
+        line-height: 1.08em
+    .single-title
+        margin-bottom: 0.2em
+    .widget-card 
+        .widget-content
+            font-size: em(18px)
+    .napr-wrapper 
+        .napr-content 
+            a 
+                .napr-title 
+                    h6
+                        font-size: em(18px)
+                        line-height: em(20px)
+    .sliders-wrapper
+        .slide-wrapper
+            width: 98vw
+            height: 20vh
+            min-width: 100vw
+            max-height: 100vh
+            .sliders.slick-slider
+                overflow: hidden
+            .slider-content
+                width: 70%
+                box-sizing: border-box
+                left: 15px
+                h3
+                    line-height: 1.08em
+    .sliders-nav-wrapper
+        margin-top: 1em
+    .footer-block
+	    .footer-bg
+            h6
+                margin-bottom: 0.7em
+            h4
+                line-height: 1.1em
+            .navigation-menus
+                margin-bottom: 2em
+    /* Headers */
+    .menu-wrapper
+	    background-color: #ffffff
+    .main-navigation
+        position: absolute
+        left: 0
+        z-index: 10000
+        .menu-toggle
+            display: none
+        #mega-menu-wrap-menu-1
+            .mega-menu-toggle
+                background: $whitebg
+                &.mega-menu-open
+                    transition: all 0.3s
+            .mega-toggle-blocks-center, .mega-toggle-blocks-right
+                display: none
+        
+// ≥576px
++media-breakpoint-down(xs)
+   
+
+/*==========  Mobile First  ==========*/
+
+// ≤576px
++media-breakpoint-up(sm)
+    
+    
+// ≤768px
++media-breakpoint-up(md)
+
+// ≤992px
++media-breakpoint-up(lg)
+
+// ≤1200px
++media-breakpoint-up(xl)
+    .search-wrapper
+        .search-icon
+            
+        .form-inline
+            
+            .form-group
+                input.form-control
+                   

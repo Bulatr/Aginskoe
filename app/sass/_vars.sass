@@ -1,0 +1,29 @@
+// User variables:
+$accent: #0E77A5
+$text: #333
+$secondary-color: #045484
+$light-gray: #F3F6F8
+$light-gray1: #F0F3F5
+$graybg: #B8B6B6
+$blackbg: #000000
+$whitebg: #ffffff
+$whitegray: #FEFCFC
+$divider: #D9D9DE
+
+// Bootstrap compatible gutter variable => $gutter
+$grid-gutter-width: 30px
+$gutter: $grid-gutter-width
+// // Breakpoints mixin settings (node_modules/bootstrap/scss/mixins/_breakpoints.scss)
+// // Example: +media-breakpoint-down(xs) - ≥576px / +media-breakpoint-up(sm) - // ≤576px
+// // Default variables: node_modules/bootstrap/scss/_variables.scss
+$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px)
+$gutter: $grid-gutter-width
+$browser-context: 16
+@function em($pixels, $context: $browser-context)
+    @if (unitless($pixels)) 
+        $pixels: $pixels * 1px
+
+    @if (unitless($context)) 
+        $context: $context * 1px
+
+    @return $pixels / $context * 1em

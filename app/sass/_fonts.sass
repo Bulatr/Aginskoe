@@ -1,0 +1,31 @@
+// font-weight helper:
+
+// 100 Extra Light or Ultra Light;
+// 200 Light or Thin; 300 Book or Demi;
+// 400 Regular or Normal;
+// 500 Medium;
+// 600 Semibold or Demibold;
+// 700 Bold;
+// 800 Black or Extra Bold or Heavy;
+// 900 Extra Black or Fat or Ultra Black
+
+
+@mixin font($f-name, $f-style, $f-weight, $f-url)
+	@font-face
+		font-family: $f-name
+		font-style: $f-style
+		font-weight: $f-weight
+		src: url($f-url) format('woff2')
+
+
+@include font('FiraSans', normal, 400, '../fonts/FiraSansRegular.woff2')
+@include font('FiraSans', italic, 400, '../fonts/FiraSansItalic.woff2')
+@include font('FiraSans', normal, 700, '../fonts/FiraSansBold.woff2')
+@include font('FiraSans', normal, 500, '../fonts/FiraSansMedium.woff2')
+@include font('FiraSans', normal, 200, '../fonts/FiraSansLight.woff2')
+@include font('PTSans', normal, 400, '../fonts/PTSansRegular.woff2')
+@include font('PTSans', normal, 700, '../fonts/PTSansBold.woff2')
+@include font('SourceSansPro', normal, 200, '../fonts/SourceSansProLight.woff2')
+@include font('SourceSansPro', normal, 400, '../fonts/SourceSansProRegular.woff2')
+@include font('SourceSansPro', normal, 700, '../fonts/SourceSansProBold.woff2')
+@include font('Slick', normal, 400, '../fonts/slick.woff2')
