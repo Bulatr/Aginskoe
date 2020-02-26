@@ -130,7 +130,7 @@ a
 		flex-wrap: nowrap
 		justify-content: flex-start
 		align-items: center
-		width: 79%
+		width: 77%
 		.site-name
 			font-family: "FiraSans"
 			font-size: em(17px)
@@ -321,6 +321,19 @@ ul#footer-menu,ul#footer-menu-1, ul#footer-menu-2, ul#footer-menu-3
 			a
 				color: $whitebg
 				font-weight: 400
+.pagination-wrapper
+	margin-bottom: em(35px)
+	.navigation 
+		&.pagination
+			.nav-links
+				.page-numbers 
+					font-size: em(16px)
+					line-height: em(16px)
+					color: $text
+					padding: 5px 15px
+					border: 1px solid $text
+					&.current
+						color: $accent
 // sections
 .main-bg-fluid
 	background-image: url("../img/@1x/aginskoe-fon-main.jpg")

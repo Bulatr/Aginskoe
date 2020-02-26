@@ -32,7 +32,7 @@ if ( have_posts() ) : ?>
 	</div>
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-12 col-md-4 col-lg-3">
+			<div class="col-sm-12 col-md-4 col-lg-3 col-xl-3">
 				<div class="gos-list">
 					<?php
 					
@@ -49,7 +49,7 @@ if ( have_posts() ) : ?>
 					?>
 				</div>				
 			</div>
-			<div class="col-sm-12 col-md-5 col-lg-6">
+			<div class="col-sm-12 col-md-6 col-lg-7 col-xl-6">
 				<div class="article">
 					<?php 
 					$post_type = get_post_type();
@@ -62,7 +62,7 @@ if ( have_posts() ) : ?>
 					<?php the_posts_pagination(  ); ?>
 				</div>
 			</div>
-			<div class="col-sm-12 col-md-3 col-lg-3">
+			<div class="col-sm-12 col-md-2 col-lg-2 col-xl-2">
 
 			</div>
 		</div>
