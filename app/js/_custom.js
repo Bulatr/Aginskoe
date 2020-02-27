@@ -27,6 +27,25 @@ jQuery(function($){
 		infinite: false,
 		variableWidth: true,
 		arrows: false
-	  });	  
-
+	  });	
+	  
+	$('.image-news').hover(function () {
+			// over
+			$(this).addClass('kenburns-bottom');
+			
+		}, function () {
+			// out
+			$(this).removeClass('kenburns-bottom');
+		}
+	);
+	
+	$('.article img').hover(function () {
+		// over
+		$(this).addClass('kenburns-top');
+		
+	}, function () {
+		// out
+		$(this).removeClass('kenburns-top');
+	}
+);
 });

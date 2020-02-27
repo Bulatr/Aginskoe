@@ -17,7 +17,7 @@ get_header();
 ?>
 <section class="main-content">
 		
-        <div class="main-bg-fluid"></div>
+        <div class="main-bg-fluid kenburns-bottom"></div>
         
         <div class="container">
             <div class="row">
