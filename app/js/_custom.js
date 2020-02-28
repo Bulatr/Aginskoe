@@ -28,7 +28,9 @@ jQuery(function($){
 		variableWidth: true,
 		arrows: false
 	  });	
-	  
+	
+	$('.navigation.post-navigation').addClass('container');  
+
 	$('.image-news').hover(function () {
 			// over
 			$(this).addClass('kenburns-bottom');
@@ -47,5 +49,6 @@ jQuery(function($){
 		// out
 		$(this).removeClass('kenburns-top');
 	}
+	
 );
 });

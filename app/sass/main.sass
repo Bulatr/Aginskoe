@@ -294,6 +294,10 @@ a
 	transition: all 0.5s
 	&:hover
 		transition: all 0.5s
+.wp-block-file 
+	.wp-block-file__button
+		border-radius: 0
+		padding: .5em 1.2em
 // Navigation menu
 .menu-wrapper
 	background-color: #f3f6f8
@@ -473,6 +477,15 @@ ul#footer-menu,ul#footer-menu-1, ul#footer-menu-2, ul#footer-menu-3
 				line-height: 1.2
 				a
 					color: $secondary-color
+.navigation 
+	display: block
+	margin: 0 auto
+	margin-bottom: em(30px)
+	padding-top: em(30px)
+	border-top: 1px solid $divider
+	&.post-navigation
+		display: table
+
 .entry-header
 	padding-top: em(50px)
 	padding-bottom: em(50px)
@@ -492,8 +505,10 @@ ul#footer-menu,ul#footer-menu-1, ul#footer-menu-2, ul#footer-menu-3
 	padding-bottom: em(40px)
 	position: relative
 	border-bottom: 0.5px solid $divider
-	margin-bottom: em(30px)
-
+	margin-bottom: em(20px)
+	h1
+		&.entry-title
+			width: 80%
 	.label
 		margin-bottom: 8px
 		font-size: em(14px)
@@ -664,9 +679,9 @@ ul#footer-menu,ul#footer-menu-1, ul#footer-menu-2, ul#footer-menu-3
 				text-decoration: none
 		
 		.label
-			margin-bottom: 8px
+			margin-bottom: 5px
 			font-size: em(14px)
-			color: $text
+			color: $secondary-color
 			opacity: 0.8
 			padding-top: em(5px)
 			line-height: 100%
@@ -676,6 +691,9 @@ ul#footer-menu,ul#footer-menu-1, ul#footer-menu-2, ul#footer-menu-3
 				padding-right: em(3px)
 			.divider
 				padding-right: em(3px)
+			.category
+				text-transform: uppercase
+				font-size: em(13px)
 			
 	&.main
 		max-width: fit-content
@@ -716,6 +734,11 @@ ul#footer-menu,ul#footer-menu-1, ul#footer-menu-2, ul#footer-menu-3
 				font-family: "SourceSansPro"
 				font-size: em(16px)
 				line-height: em(22px)
+			h5
+				font-size: em(18px)
+				line-height: em(21px)
+				margin-top: em(10px)
+				padding-bottom: em(35px)
 		&.column
 			flex-direction: column
 			max-width: em(318px)
@@ -730,7 +753,7 @@ ul#footer-menu,ul#footer-menu-1, ul#footer-menu-2, ul#footer-menu-3
 					padding-top: em(20px)
 				h5
 					font-size: em(18px)
-					line-height: em(22px)
+					line-height: em(21px)
 					margin-top: em(10px)
 					padding-bottom: em(35px)
 	
@@ -766,7 +789,7 @@ ul#footer-menu,ul#footer-menu-1, ul#footer-menu-2, ul#footer-menu-3
 		.content-news
 			.data-anonsa
 				font-size: em(17px)
-				line-height: em(22px)
+				line-height: em(20px)
 				margin-top: em(10px)
 				margin-bottom: em(10px)
 				h5
@@ -801,7 +824,13 @@ a
 	box-sizing: border-box
 	height: 100%
 	
-
+.comment-form
+	label
+		min-width: 3.2em
+	input
+		border-radius: 0
+	textarea
+		border-radius: 0
 .news-column
 	.card-news
 		margin-bottom: em(20px)
@@ -1074,7 +1103,7 @@ a
 				margin-right: em(30px)
 				opacity: 1
 		
-			
+	
 
 // media
 @import media
