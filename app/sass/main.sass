@@ -735,10 +735,11 @@ ul#footer-menu,ul#footer-menu-1, ul#footer-menu-2, ul#footer-menu-3
 				font-size: em(16px)
 				line-height: em(22px)
 			h5
-				font-size: em(18px)
-				line-height: em(21px)
+				font-size: em(16px)
+				line-height: 136%
 				margin-top: em(10px)
 				padding-bottom: em(35px)
+				opacity: 0.76
 		&.column
 			flex-direction: column
 			max-width: em(318px)
@@ -752,8 +753,8 @@ ul#footer-menu,ul#footer-menu-1, ul#footer-menu-2, ul#footer-menu-3
 				.label
 					padding-top: em(20px)
 				h5
-					font-size: em(18px)
-					line-height: em(21px)
+					font-size: em(16px)
+					line-height: 126%
 					margin-top: em(10px)
 					padding-bottom: em(35px)
 	
@@ -790,17 +791,19 @@ ul#footer-menu,ul#footer-menu-1, ul#footer-menu-2, ul#footer-menu-3
 			.data-anonsa
 				font-size: em(17px)
 				line-height: em(20px)
-				margin-top: em(10px)
+				margin-top: 0
 				margin-bottom: em(10px)
 				h5
 					font-size: em(17px)
 					line-height: em(22px)
 					color: $accent
+				a
+					font-weight: 400
 			.mesto
 				font-family: "SourceSansPro"
 				font-size: em(14px)
 				line-height: em(22px)
-				font-weight: 600
+				font-weight: 500
 				margin-bottom: em(17px)
 				opacity: 0.8
 			p
@@ -814,8 +817,12 @@ a
 	font-size: em(14px)
 	line-height: 126%
 	color: $blackbg
+	&::hover
+		color: $accent
+	&:visited
+		color: $blackbg
 .dopmenu
-	margin-top: em(20px)
+	margin-top: em(35px)
 	padding-bottom: em(12px)
 .anons-wrap
 	display: flex
@@ -840,8 +847,9 @@ a
 			
 		.content-news
 			h5
-				font-size: 1.2em
-				line-height: 126%
+				font-size: em(16px)
+				line-height: 136%
+				opacity: 0.76
 	&.media-news
 		.card-news
 			margin-bottom: em(33px)
